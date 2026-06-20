@@ -1,5 +1,7 @@
 # ClaimMate
 
+![ClaimMate: appeal a denied insurance claim. Cite a real clause, or abstain. Never invent.](docs/card.png)
+
 An AI agent that helps a person appeal a denied health insurance claim.
 
 Insurers deny claims knowing most people never appeal. The deadline is buried and the policy is hard to read. ClaimMate reads the denial letter, finds the appeal deadline, locates the **real** plan clause that supports coverage (or **abstains** when none does), drafts a citation-grounded appeal, and **never finalizes without the member's approval**.

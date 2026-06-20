@@ -26,6 +26,17 @@ Run `scripts/before_after.py` and you see the difference on the same denial: a n
 
 ClaimMate is built with the Agent Development Kit. An orchestrator handles the flow and the drafting, and a separate Clause-Finder specialist does the hard reasoning: retrieve candidate clauses, decide whether any supports coverage, and abstain when none does. Both run on Gemini 3.1 Flash-Lite, so the whole project reproduces on the free tier at zero cost, and it still scores 100% on the eval suite because the deterministic retrieval does the searching and the model only judges and quotes. The Clause-Finder is a separate agent, so its model is independently configurable for stronger reasoning when billing is available, and it can run in process or be served and called over the A2A protocol. See `docs/ARCHITECTURE.md` for the diagram and the full mapping of components to course concepts.
 
+## Course concepts demonstrated
+
+ClaimMate puts the 5-Day AI Agents Intensive course to work, and applies well beyond the required three concepts:
+
+- **Multi-agent system (ADK)**: an orchestrator `LlmAgent` that delegates to a specialist Clause-Finder agent (`agent.py`, `clause_finder.py`).
+- **Tools and an external API**: function tools for live ICD-10 validation against the public NLM Clinical Tables API, appeal-deadline math, and plan search (`tools.py`).
+- **Agent-to-agent (A2A)**: the Clause-Finder is served over A2A and called as a `RemoteA2aAgent` (`a2a_server.py`).
+- **Memory and context**: user-scoped session state persists the member's plan across sessions on a SQLite store (`config.py`, `run.py`).
+- **Security guardrails and evals**: a deterministic citation gate blocks any invented clause, a human approval step gates finalizing, no secrets live in the code, and an eval suite passes all four cases (`guardrails.py`, `tools.py`, `evals/run_eval.py`).
+- **Deployability and observability**: runs under `adk web` with a live trace view, and deploys with `adk deploy cloud_run`.
+
 ## Why you can trust it
 
 - A deterministic citation gate checks every cited clause against the plan and blocks anything invented.

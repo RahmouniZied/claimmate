@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="280" viewBox="0 0 560 280" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1A2F"/>
+      <stop offset="1" stop-color="#0F2A47"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.22" r="0.8">
+      <stop offset="0" stop-color="#16395C"/>
+      <stop offset="1" stop-color="#0B1A2F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="560" height="280" fill="url(#bg)"/>
+  <rect width="560" height="280" fill="url(#glow)"/>
+  <rect x="0" y="0" width="560" height="4" fill="url(#accent)"/>
+
+  <!-- logo mark: shield + check -->
+  <g transform="translate(42,32)">
+    <path d="M22 0 L44 8 V27 C44 41 34 51 22 57 C10 51 0 41 0 27 V8 Z" fill="url(#accent)"/>
+    <path d="M12 28 l7 7 l13 -16" fill="none" stroke="#0B1A2F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="102" y="70" fill="#FFFFFF" font-size="40" font-weight="700" letter-spacing="-0.5">ClaimMate</text>
+
+  <!-- headline + subtitle (kept inside the left column, x44..400) -->
+  <text x="44" y="120" fill="#E2E8F0" font-size="20" font-weight="600">Appeal a denied insurance claim.</text>
+  <text x="44" y="148" fill="#9FB3C8" font-size="14">Surfaces the deadline. Drafts the appeal. You approve.</text>
+
+  <!-- hero line with accent bar -->
+  <rect x="44" y="170" width="4" height="22" rx="2" fill="url(#accent)"/>
+  <text x="60" y="187" fill="#6EE7B7" font-size="15" font-weight="600">Cite a real clause, or abstain. Never invent.</text>
+
+  <!-- footer -->
+  <text x="44" y="248" fill="#5B7088" font-size="12" font-weight="600" letter-spacing="1.5">BUILT WITH GOOGLE ADK</text>
+
+  <!-- right visual: a denied letter turned into a grounded appeal -->
+  <g transform="translate(418,66)">
+    <rect x="0" y="0" width="128" height="150" rx="10" fill="#F8FAFC"/>
+    <rect x="16" y="18" width="72" height="8" rx="4" fill="#0F2A47"/>
+    <g transform="translate(64,48) rotate(-12)">
+      <rect x="-43" y="-13" width="86" height="26" rx="5" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-opacity="0.85"/>
+      <text x="0" y="6" fill="#EF4444" fill-opacity="0.9" font-size="15" font-weight="800" text-anchor="middle" letter-spacing="1">DENIED</text>
+    </g>
+    <rect x="16" y="78" width="96" height="6" rx="3" fill="#CBD5E1"/>
+    <rect x="16" y="92" width="96" height="6" rx="3" fill="#CBD5E1"/>
+    <rect x="16" y="106" width="64" height="6" rx="3" fill="#CBD5E1"/>
+    <g transform="translate(96,120)">
+      <circle r="23" fill="url(#accent)"/>
+      <path d="M-9 1 l6 7 l12 -14" fill="none" stroke="#0B1A2F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>
