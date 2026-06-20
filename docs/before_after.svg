@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1A2F"/>
+      <stop offset="1" stop-color="#0F2A47"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="470" fill="url(#bg)"/>
+  <rect x="0" y="0" width="900" height="4" fill="url(#accent)"/>
+  <text x="40" y="46" fill="#FFFFFF" font-size="24" font-weight="700">Same denial, two answers</text>
+  <text x="40" y="70" fill="#7C93AD" font-size="13">A cosmetic-surgery denial (Z41.1) that the plan genuinely excludes.</text>
+
+  <!-- LEFT: naive -->
+  <g>
+    <rect x="40" y="92" width="392" height="316" rx="14" fill="#1B1416" stroke="#7F2630"/>
+    <rect x="40" y="92" width="6" height="316" rx="3" fill="#EF4444"/>
+    <text x="66" y="128" fill="#FFFFFF" font-size="18" font-weight="700">A naive assistant</text>
+    <text x="66" y="149" fill="#F4A6AD" font-size="12.5" font-weight="600">ungrounded, free to guess</text>
+
+    <rect x="66" y="166" width="340" height="150" rx="9" fill="#0F1E33" stroke="#33485F"/>
+    <text x="84" y="192" fill="#CBD5E1" font-size="13">"...per Plan Clause 4.2(a):</text>
+    <text x="84" y="214" fill="#CBD5E1" font-size="13">'Blepharoplasty shall be considered</text>
+    <text x="84" y="236" fill="#CBD5E1" font-size="13">medically necessary when the member</text>
+    <text x="84" y="258" fill="#CBD5E1" font-size="13">presents with visual field obstruction...'</text>
+    <text x="84" y="286" fill="#94A3B8" font-size="12.5" font-style="italic">+ invented visual-field test results</text>
+
+    <text x="66" y="350" fill="#F87171" font-size="15" font-weight="700">A fabricated clause, quote,</text>
+    <text x="66" y="372" fill="#F87171" font-size="15" font-weight="700">and clinical evidence.</text>
+  </g>
+
+  <!-- RIGHT: ClaimMate -->
+  <g>
+    <rect x="468" y="92" width="392" height="316" rx="14" fill="#0E2C22" stroke="#1F9D74"/>
+    <rect x="468" y="92" width="6" height="316" rx="3" fill="url(#accent)"/>
+    <text x="494" y="128" fill="#FFFFFF" font-size="18" font-weight="700">ClaimMate</text>
+    <text x="494" y="149" fill="#6EE7B7" font-size="12.5" font-weight="600">grounded, or it abstains</text>
+
+    <rect x="494" y="166" width="340" height="150" rx="9" fill="#0F1E33" stroke="#1F9D74"/>
+    <text x="512" y="192" fill="#E2E8F0" font-size="13">"I must be honest with you: I cannot</text>
+    <text x="512" y="214" fill="#E2E8F0" font-size="13">draft an appeal for this case. The plan</text>
+    <text x="512" y="236" fill="#E2E8F0" font-size="13">explicitly excludes cosmetic services</text>
+    <text x="512" y="258" fill="#E2E8F0" font-size="13">under Section 9.3."</text>
+    <text x="512" y="286" fill="#6EE7B7" font-size="12.5" font-style="italic">cites only a real clause (the exclusion)</text>
+
+    <text x="494" y="350" fill="#34D399" font-size="15" font-weight="700">Cites only real clauses,</text>
+    <text x="494" y="372" fill="#34D399" font-size="15" font-weight="700">or abstains. Never invents.</text>
+  </g>
+
+  <text x="40" y="448" fill="#5B7088" font-size="12.5">A deterministic citation gate blocks any clause not in the plan. The abstention is not a failure. It is the point.</text>
+</svg>

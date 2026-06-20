@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1A2F"/>
+      <stop offset="1" stop-color="#0F2A47"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#34D399"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="560" fill="url(#bg)"/>
+  <rect x="0" y="0" width="900" height="4" fill="url(#accent)"/>
+  <text x="36" y="46" fill="#FFFFFF" font-size="24" font-weight="700">ClaimMate · agent architecture</text>
+  <text x="36" y="68" fill="#7C93AD" font-size="13">Built with the Agent Development Kit. Both agents run on Gemini 3.1 Flash-Lite (free tier).</text>
+
+  <!-- arrows (drawn first, behind boxes) -->
+  <g stroke="#34D399" stroke-width="2.2" fill="none" marker-end="url(#arrow)" stroke-opacity="0.85">
+    <path d="M180 168 L180 192"/>
+    <path d="M322 250 C 380 200, 380 130, 416 124"/>
+    <path d="M322 268 L416 290"/>
+    <path d="M322 286 C 380 330, 380 376, 416 378"/>
+    <path d="M322 300 C 372 430, 372 466, 416 468"/>
+    <path d="M560 170 L560 188"/>
+  </g>
+  <!-- memory two-way -->
+  <g stroke="#5B7088" stroke-width="2" fill="none" stroke-dasharray="5 4">
+    <path d="M180 350 L180 374" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- LEFT: member -->
+  <g>
+    <rect x="40" y="92" width="280" height="76" rx="12" fill="#13233B" stroke="#274869"/>
+    <text x="60" y="124" fill="#FFFFFF" font-size="18" font-weight="600">Member</text>
+    <text x="60" y="148" fill="#9FB3C8" font-size="13">uploads a denial letter and the plan</text>
+  </g>
+
+  <!-- LEFT: orchestrator (hub) -->
+  <g>
+    <rect x="40" y="194" width="280" height="150" rx="14" fill="#0E2C22" stroke="#34D399" stroke-width="2"/>
+    <text x="60" y="228" fill="#FFFFFF" font-size="19" font-weight="700">ClaimMate orchestrator</text>
+    <text x="60" y="252" fill="#6EE7B7" font-size="13" font-weight="600">Gemini 3.1 Flash-Lite</text>
+    <text x="60" y="286" fill="#9FB3C8" font-size="13">Runs the 7-step appeal workflow:</text>
+    <text x="60" y="306" fill="#9FB3C8" font-size="13">read, validate, deadline, delegate,</text>
+    <text x="60" y="326" fill="#9FB3C8" font-size="13">draft, gate, approve.</text>
+  </g>
+
+  <!-- LEFT: memory -->
+  <g>
+    <rect x="40" y="376" width="280" height="76" rx="12" fill="#13233B" stroke="#274869"/>
+    <text x="60" y="408" fill="#FFFFFF" font-size="17" font-weight="600">Memory</text>
+    <text x="60" y="432" fill="#9FB3C8" font-size="13">user-scoped plan profile, across sessions</text>
+  </g>
+
+  <!-- RIGHT: clause-finder -->
+  <g>
+    <rect x="416" y="78" width="444" height="92" rx="12" fill="#13233B" stroke="#274869"/>
+    <rect x="416" y="78" width="5" height="92" rx="2.5" fill="url(#accent)"/>
+    <text x="438" y="108" fill="#FFFFFF" font-size="17" font-weight="600">Clause-Finder specialist  ·  served over A2A</text>
+    <text x="438" y="131" fill="#6EE7B7" font-size="13" font-weight="600">Gemini 3.1 Flash-Lite</text>
+    <text x="438" y="153" fill="#9FB3C8" font-size="13">returns SUPPORTED §X.Y with an exact quote, or ABSTAIN</text>
+  </g>
+
+  <!-- RIGHT: search_plan (under clause-finder) -->
+  <g>
+    <rect x="476" y="188" width="324" height="54" rx="10" fill="#0F1E33" stroke="#274869"/>
+    <text x="496" y="212" fill="#E2E8F0" font-size="14" font-weight="600">search_plan</text>
+    <text x="496" y="231" fill="#9FB3C8" font-size="12.5">BM25 over the plan clauses (no external vector store)</text>
+  </g>
+
+  <!-- RIGHT: tools -->
+  <g>
+    <rect x="416" y="256" width="444" height="70" rx="12" fill="#13233B" stroke="#274869"/>
+    <rect x="416" y="256" width="5" height="70" rx="2.5" fill="url(#accent)"/>
+    <text x="438" y="286" fill="#FFFFFF" font-size="16" font-weight="600">Tools and an external API</text>
+    <text x="438" y="308" fill="#9FB3C8" font-size="13">ICD-10 validation via the live NLM Clinical Tables API · deadline math</text>
+  </g>
+
+  <!-- RIGHT: citation gate -->
+  <g>
+    <rect x="416" y="346" width="444" height="70" rx="12" fill="#13233B" stroke="#274869"/>
+    <rect x="416" y="346" width="5" height="70" rx="2.5" fill="url(#accent)"/>
+    <text x="438" y="376" fill="#FFFFFF" font-size="16" font-weight="600">Citation gate  ·  deterministic</text>
+    <text x="438" y="398" fill="#9FB3C8" font-size="13">blocks any cited clause that is not present in the plan</text>
+  </g>
+
+  <!-- RIGHT: human approval -->
+  <g>
+    <rect x="416" y="436" width="444" height="70" rx="12" fill="#13233B" stroke="#274869"/>
+    <rect x="416" y="436" width="5" height="70" rx="2.5" fill="url(#accent)"/>
+    <text x="438" y="466" fill="#FFFFFF" font-size="16" font-weight="600">finalize_appeal  ·  human approval required</text>
+    <text x="438" y="488" fill="#9FB3C8" font-size="13">prepares a draft only; it never files or sends anything</text>
+  </g>
+
+  <text x="36" y="540" fill="#5B7088" font-size="12">All data is synthetic. Diagnosis codes are validated against a public API. The member reviews and submits.</text>
+</svg>
