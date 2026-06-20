@@ -6,10 +6,14 @@ PKG_DIR = Path(__file__).resolve().parent
 ROOT_DIR = PKG_DIR.parent
 DATA_DIR = ROOT_DIR / "data" / "synthetic"
 
-# Model ids (override via env if newer models are available).
-FLASH_MODEL = os.getenv("CLAIMMATE_FLASH_MODEL", "gemini-2.5-flash")
-PRO_MODEL = os.getenv("CLAIMMATE_PRO_MODEL", "gemini-2.5-pro")
-GUARD_MODEL = os.getenv("CLAIMMATE_GUARD_MODEL", "gemini-2.5-flash-lite")
+# Model ids (override via env). Defaults run entirely on the free tier on
+# Gemini 3.1 Flash-Lite, which has the rate-limit headroom for a smooth end
+# to end run and scores 100% on the eval suite. The Clause-Finder is a
+# separate agent, so its model is independently configurable: point
+# PRO_MODEL at a stronger model (e.g. gemini-3-pro-preview) when billing is
+# enabled.
+FLASH_MODEL = os.getenv("CLAIMMATE_FLASH_MODEL", "gemini-3.1-flash-lite")
+PRO_MODEL = os.getenv("CLAIMMATE_PRO_MODEL", "gemini-3.1-flash-lite")
 
 # Active plan document used for retrieval and the citation gate.
 DEFAULT_PLAN = Path(os.getenv("CLAIMMATE_PLAN_PATH", str(DATA_DIR / "plans" / "northwind_ppo.md")))

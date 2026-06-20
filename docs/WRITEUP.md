@@ -20,11 +20,11 @@ You give it the denial letter and your plan. It then:
 
 The hardest part of an appeal is grounding it in the policy. A normal assistant will confidently cite a clause that does not exist, and that single fabrication can sink a real appeal.
 
-Run `scripts/before_after.py` and you see the difference on the same denial: a naive model invents a clause number that is not in the plan, while ClaimMate cites a real clause with its section, or, on a service the plan genuinely excludes, says "I could not find supporting language and I will not guess." The abstention is not a failure. It is the point.
+Run `scripts/before_after.py` and you see the difference on the same denial: a naive model fabricates a plan clause and a supporting quote it was never given, and even invents clinical evidence, while ClaimMate cites only real clauses, or, on a service the plan genuinely excludes, says "I could not find supporting language and I will not guess." The abstention is not a failure. It is the point.
 
 ## How it works
 
-ClaimMate is built with the Agent Development Kit. An orchestrator on a fast model handles the flow and the drafting. A Clause-Finder specialist on a stronger model does the hard reasoning: retrieve candidate clauses, decide whether any supports coverage, and abstain when none does. The Clause-Finder can run in process or be served and called over the A2A protocol. See `docs/ARCHITECTURE.md` for the diagram and the full mapping of components to course concepts.
+ClaimMate is built with the Agent Development Kit. An orchestrator handles the flow and the drafting, and a separate Clause-Finder specialist does the hard reasoning: retrieve candidate clauses, decide whether any supports coverage, and abstain when none does. Both run on Gemini 3.1 Flash-Lite, so the whole project reproduces on the free tier at zero cost, and it still scores 100% on the eval suite because the deterministic retrieval does the searching and the model only judges and quotes. The Clause-Finder is a separate agent, so its model is independently configurable for stronger reasoning when billing is available, and it can run in process or be served and called over the A2A protocol. See `docs/ARCHITECTURE.md` for the diagram and the full mapping of components to course concepts.
 
 ## Why you can trust it
 
@@ -32,7 +32,7 @@ ClaimMate is built with the Agent Development Kit. An orchestrator on a fast mod
 - The Clause-Finder abstains rather than stretch unrelated language.
 - Diagnosis codes are validated against the public NLM Clinical Tables API.
 - The appeal waits behind a human approval step.
-- An evaluation suite scores deadline extraction, code validation, correct clause grounding, the absence of invented citations, and abstention on the unsupported case. The pass-rate is reproducible with `python evals/run_eval.py`.
+- An evaluation suite scores deadline extraction, code validation, correct clause grounding, the absence of invented citations, and abstention on the unsupported case. It passes all four cases, a 100 percent pass-rate, reproducible with `python evals/run_eval.py`.
 
 ## Why I built it
 

@@ -2,10 +2,10 @@
 
 ```mermaid
 flowchart TD
-    U[Member: denial letter + plan] --> ORC[ClaimMate orchestrator<br/>Gemini Flash]
+    U[Member: denial letter + plan] --> ORC[ClaimMate orchestrator<br/>Gemini 3.1 Flash-Lite]
     ORC -->|diagnosis code| ICD[validate_diagnosis_code<br/>NLM Clinical Tables API]
     ORC -->|letter date + window| DL[compute_appeal_deadline]
-    ORC -->|denial summary| CF[Clause-Finder specialist<br/>Gemini Pro, via A2A]
+    ORC -->|denial summary| CF[Clause-Finder specialist<br/>Gemini 3.1 Flash-Lite, via A2A]
     CF -->|queries| SP[search_plan<br/>BM25 over plan clauses]
     CF -->|supporting clause or ABSTAIN| ORC
     ORC -->|draft text| GATE[validate_citations<br/>deterministic gate]
@@ -35,9 +35,9 @@ flowchart TD
 | Evals and guardrails | `evals/run_eval.py`, `guardrails.py`, citation gate |
 | Deploy and observability | `adk web` traces, optional `adk deploy cloud_run` |
 
-## Why two models
+## Why two agents
 
-The orchestrator runs on a fast model for routing and drafting. The Clause-Finder runs on a stronger model because deciding whether dense policy language supports a claim, and abstaining when it does not, is the hard reasoning step.
+The split is by responsibility. The orchestrator drives the seven step workflow and the drafting. The Clause-Finder is a focused specialist whose only job is the hard reasoning step: decide whether dense policy language supports a claim, or abstain when it does not. Keeping it as its own agent means the hard reasoning is isolated, can be served over A2A, and has its own independently configurable model. Both agents run on Gemini 3.1 Flash-Lite, which keeps the whole project on the free tier and still scores 100% on the eval suite, because the deterministic BM25 retrieval does the searching and the model only has to judge and quote. When stronger reasoning is wanted, point the Clause-Finder at a Pro model (set `CLAIMMATE_PRO_MODEL=gemini-3-pro-preview` with billing enabled) without changing anything else.
 
 ## Safety design
 

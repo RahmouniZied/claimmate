@@ -16,6 +16,9 @@ from pathlib import Path
 # Unattended run: do not pause on the approval gate. Must be set before import.
 os.environ.setdefault("CLAIMMATE_DISABLE_CONFIRM", "1")
 
+# Space cases out to respect free-tier requests-per-minute limits.
+PACING_SECONDS = float(os.environ.get("CLAIMMATE_EVAL_PACING_SECONDS", "4"))
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
@@ -77,6 +80,8 @@ async def main():
     letters = config.DATA_DIR / "letters"
     report, passed = [], 0
     for i, case in enumerate(CASES):
+        if i:
+            await asyncio.sleep(PACING_SECONDS)
         letter = (letters / case["file"]).read_text(encoding="utf-8")
         try:
             tr, ft = await _collect(
