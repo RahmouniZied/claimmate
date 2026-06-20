@@ -19,7 +19,7 @@ PRO_MODEL = os.getenv("CLAIMMATE_PRO_MODEL", "gemini-3.1-flash-lite")
 DEFAULT_PLAN = Path(os.getenv("CLAIMMATE_PLAN_PATH", str(DATA_DIR / "plans" / "northwind_ppo.md")))
 
 # Persistent session store (cross-session memory). SQLite by default.
-SESSION_DB_URL = os.getenv("CLAIMMATE_DB_URL", f"sqlite:///{(ROOT_DIR / 'claimmate_sessions.db').as_posix()}")
+SESSION_DB_URL = os.getenv("CLAIMMATE_DB_URL", f"sqlite+aiosqlite:///{(ROOT_DIR / 'claimmate_sessions.db').as_posix()}")
 
 # Optional A2A endpoint for the Clause-Finder. If set, the orchestrator
 # delegates over A2A; otherwise it calls the local Clause-Finder agent.

@@ -39,7 +39,7 @@ copy .env.example .env          # then add your Google AI Studio key
 ## Run
 
 ```bash
-adk web                          # chat UI + live traces (run from the project root)
+adk web claimmate                # chat UI + live traces (run from the project root)
 python -m claimmate.run --letter data/synthetic/letters/letter_01_mri.txt
 python -m claimmate.run --memory-demo
 python evals/run_eval.py         # prints the pass-rate
