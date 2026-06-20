@@ -1,0 +1,22 @@
+NORTHWIND HEALTH PPO
+NOTICE OF ADVERSE BENEFIT DETERMINATION
+(SYNTHETIC AND FICTIONAL. Demonstration only.)
+
+Date of this notice: 2026-01-15
+Member: Pat Sample
+Member ID: NW-000-DEMO
+Claim number: CLM-IMG-0001
+
+Service denied: MRI of the lumbar spine (outpatient)
+Diagnosis code: M54.50
+Billed amount: $1,420.00
+Your responsibility if not overturned: $1,420.00
+
+Reason for denial (code MN-204): Not medically necessary. Our review found
+insufficient documentation of conservative treatment prior to advanced imaging.
+
+Note from the member's provider on file: the member completed eight weeks of
+physical therapy with no improvement before the MRI was ordered.
+
+Your appeal rights: You have 180 days from the date of this notice to request an
+internal appeal. Submit a written request describing why the service should be covered.

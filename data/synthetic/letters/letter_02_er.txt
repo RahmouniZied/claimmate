@@ -1,0 +1,22 @@
+NORTHWIND HEALTH PPO
+NOTICE OF ADVERSE BENEFIT DETERMINATION
+(SYNTHETIC AND FICTIONAL. Demonstration only.)
+
+Date of this notice: 2026-02-03
+Member: Pat Sample
+Member ID: NW-000-DEMO
+Claim number: CLM-ER-0002
+
+Service denied: Emergency department visit, level 4
+Diagnosis code: R07.9
+Billed amount: $2,310.00
+Your responsibility if not overturned: $2,310.00
+
+Reason for denial (code ER-110): Non-emergency use of the emergency department.
+The final diagnosis did not indicate an emergency condition.
+
+Note from the member on file: the member went to the emergency department with
+sudden, severe chest pain and shortness of breath and feared a heart attack.
+
+Your appeal rights: You have 180 days from the date of this notice to request an
+internal appeal.

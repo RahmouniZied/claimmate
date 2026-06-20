@@ -1,0 +1,21 @@
+NORTHWIND HEALTH PPO
+NOTICE OF ADVERSE BENEFIT DETERMINATION
+(SYNTHETIC AND FICTIONAL. Demonstration only.)
+
+Date of this notice: 2026-03-01
+Member: Pat Sample
+Member ID: NW-000-DEMO
+Claim number: CLM-RX-0004
+
+Service denied: Adalimumab (non-formulary biologic)
+Diagnosis code: L40.0
+Billed amount: $5,800.00
+Your responsibility if not overturned: $5,800.00
+
+Reason for denial (code RX-302): Non-formulary drug.
+
+Note from the member's provider on file: two formulary alternatives were tried
+over four months and were ineffective; one caused an adverse reaction.
+
+Your appeal rights: You have 180 days from the date of this notice to request an
+internal appeal.

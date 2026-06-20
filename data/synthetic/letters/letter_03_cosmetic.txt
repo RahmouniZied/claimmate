@@ -1,0 +1,21 @@
+NORTHWIND HEALTH PPO
+NOTICE OF ADVERSE BENEFIT DETERMINATION
+(SYNTHETIC AND FICTIONAL. Demonstration only.)
+
+Date of this notice: 2026-02-20
+Member: Pat Sample
+Member ID: NW-000-DEMO
+Claim number: CLM-COS-0003
+
+Service denied: Blepharoplasty (eyelid surgery), requested for cosmetic reasons
+Diagnosis code: Z41.1
+Billed amount: $3,900.00
+Your responsibility if not overturned: $3,900.00
+
+Reason for denial (code EX-903): Cosmetic service. Excluded under the plan.
+
+Note on file: the procedure was requested solely to improve appearance. There is
+no documentation of visual field obstruction or any functional impairment.
+
+Your appeal rights: You have 180 days from the date of this notice to request an
+internal appeal.
